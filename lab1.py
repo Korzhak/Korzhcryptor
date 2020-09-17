@@ -128,6 +128,7 @@ class Polybius:
             c = self._get_indexes(i)
             encode_text += self.matrix[(c[0] + 1) % 5][c[1]]
 
+
         return encode_text
 
     def decode(self, encode_text):
@@ -141,3 +142,18 @@ class Polybius:
             decode_text += self.matrix[(c[0] - 1) % 5][c[1]]
 
         return decode_text
+
+
+se = SimpleEncryption()
+c_e = se.caesar(3, "Bohdan Korzhak")
+c_d = se.caesar(3, encode_text=c_e)
+print(f"\tШифр Цезаря\nКлюч 3, зашифрований текст: \"{c_e}\", розшифрований \"{c_d}\"")
+
+v_e = se.vigenere("cipher", "Bohdan Korzhak")
+v_d = se.vigenere("cipher", encode_text=v_e)
+print(f"\tШифр Віженера\nКлюч \"cipher\", зашифрований текст: \"{v_e}\", розшифрований \"{v_d}\"")
+
+p = Polybius()
+p_e = p.encode("BohdanKorzhak")
+p_d = p.decode(encode_text=p_e)
+print(f"\tШифр Полібія\nЗашифрований текст: \"{p_d}\", розшифрований \"{p_e}\"")
