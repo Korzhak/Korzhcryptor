@@ -1,3 +1,10 @@
+"""
+Name: Lab #2
+Author: Bohdan Korzhak
+Group: AKSm-19-1
+Description: Encryptor by Palisade and ADFGVX ciphers
+"""
+
 class Palisade:
     @staticmethod
     def grouper(iterable, n):

@@ -1,3 +1,9 @@
+"""
+Name: Lab #4
+Author: Bohdan Korzhak
+Group: AKSm-19-1
+Description: Encryptor by Cipher of Gronsfeld
+"""
 from string import (
     ascii_lowercase as al,
 )
@@ -76,5 +82,5 @@ class NumberCipher:
 
 
 df = NumberCipher(number_key=1234)
-print(df.encode("texttexttext textdfadfajfkj"))
-print(df.decode("ugaxugaxugax ugaxehdhgcmjll"))
+print(df.encode("Korzhak Bohdan"))
+print(df.decode("lqudicn fpjgeo"))
