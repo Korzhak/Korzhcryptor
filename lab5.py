@@ -1,9 +1,16 @@
+"""
+Name: Lab #5
+Author: Bohdan Korzhak
+Group: AKSm-19-1
+Description: Encryptor by Shuffle Cipher
+"""
+
 import random
 
 
 class ShuffleCipher:
     @staticmethod
-    def crypto(s, key):
+    def encode(s, key):
         random.seed(key)
         ln = len(s)
         keys = random.sample(range(ln), ln)
@@ -13,7 +20,7 @@ class ShuffleCipher:
         return out
 
     @staticmethod
-    def encrypt(s, key):
+    def decode(s, key):
         random.seed(key)
         ln = len(s)
         keys = random.sample(range(ln), ln)
@@ -24,6 +31,6 @@ class ShuffleCipher:
 
 
 sc = ShuffleCipher()
-s1 = sc.crypto('Example encrypted string', 5)
+s1 = sc.encode('Example encrypted string', 5)
 print('crypt:\n' + s1)
-print('encrypt:\n' + sc.encrypt(s1, 5))
+print('encrypt:\n' + sc.decode(s1, 5))
